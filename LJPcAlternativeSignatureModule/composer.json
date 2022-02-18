@@ -1,0 +1,24 @@
+{
+  "name": "freescout/ljpcalternativesignaturesmodule",
+  "description": "",
+  "authors": [
+    {
+      "name": "LJPc solutions",
+      "email": "info@ljpc.nl"
+    }
+  ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Modules\\LJPcAlternativeSignaturesModule\\Providers\\LJPcAlternativeSignaturesModuleServiceProvider"
+      ],
+      "aliases": {
+      }
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Modules\\LJPcAlternativeSignaturesModule\\": ""
+    }
+  }
+}
