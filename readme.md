@@ -46,7 +46,11 @@ please consider donating.
 [Click here](https://www.buymeacoffee.com/Lars-) to donate.
 
 ## Screenshots
-
+Setup the alternative signatures:
 ![Setup the alternative signatures](repo/screenshot-1.jpg)
+---
+Select the desired signature when composing a new message:
 ![Select the desired signature when composing a new message](repo/screenshot-2.jpg)
+---
+Result:
 ![Result](repo/screenshot-3.jpg)
