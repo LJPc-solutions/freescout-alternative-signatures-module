@@ -47,6 +47,7 @@ please consider donating.
 
 ## Screenshots
 Setup the alternative signatures:
+
 ![Setup the alternative signatures](repo/screenshot-1.jpg)
 ---
 Select the desired signature when composing a new message:

@@ -61,14 +61,14 @@ class LJPcAlternativeSignaturesModuleServiceProvider extends ServiceProvider {
 			return $text;
 		}, 10, 4 );
 
-		Eventy::addAction( 'conversation.save_send_reply', function ( $conversation, $request ) {
+		Eventy::addAction( 'conversation.send_reply_save', function ( $conversation, $request ) {
 			if ( ! empty( $request->selected_signature ) ) {
 				$conversation->selected_signature = $request->selected_signature;
 				$conversation->save();
 			}
 		}, 10, 2 );
 
-		Eventy::addAction( 'mailboxes.on_save_settings', function ( $id, $request ) {
+		Eventy::addAction( 'mailboxes.settings_before_save', function ( $id, $request ) {
 			$alternativeSignatureCount = $request->alternative_signature_count;
 			if ( ! empty( $alternativeSignatureCount ) && (int) $alternativeSignatureCount > 0 ) {
 				for ( $i = 0; $i < (int) $alternativeSignatureCount; $i ++ ) {
@@ -115,7 +115,7 @@ class LJPcAlternativeSignaturesModuleServiceProvider extends ServiceProvider {
 			}
 		}, 10, 2 );
 
-		Eventy::addAction( 'conv_editor.before_status_field', function ( $mailbox, $conversation ) {
+		Eventy::addAction( 'conv_editor.editor_toolbar_prepend', function ( $mailbox, $conversation ) {
 			//Blade render signature field.blade.php
 			$customSignatures = MailboxCustomSignature::where( 'mailbox_id', $mailbox->id )->get();
 			echo view( 'signatures::signature_field', [
@@ -125,7 +125,7 @@ class LJPcAlternativeSignaturesModuleServiceProvider extends ServiceProvider {
 			] );
 		}, 10, 2 );
 
-		Eventy::addAction( 'mailboxes.view_after_settings_on_update', function ( $mailbox ) {
+		Eventy::addAction( 'mailboxes.update_after_signature', function ( $mailbox ) {
 			//Blade render update.blade.php
 			$customSignatures = MailboxCustomSignature::where( 'mailbox_id', $mailbox->id )->get();
 			echo view( 'signatures::update', [

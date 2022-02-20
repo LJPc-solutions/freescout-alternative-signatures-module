@@ -1,4 +1,4 @@
-fsAddAction('mailbox_update_init', function() {
+fsAddAction('mailbox.update_init', function() {
     var alternativeSignatureCount = parseInt($('#alternative-signature-count').val(), 10);
     for (var i = 0; i < alternativeSignatureCount; i++) {
         var alternativeSignatureSelector = '#alternative-signature-' + i;
