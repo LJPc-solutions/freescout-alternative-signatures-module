@@ -42,7 +42,7 @@ class LJPcAlternativeSignaturesModuleServiceProvider extends ServiceProvider {
 		], 'views' );
 
 		$this->loadViewsFrom( array_merge( array_map( function ( $path ) {
-			return $path . '/modules/ljpccalendarmodule';
+			return $path . '/modules/ljpcalternativesignaturesmodule';
 		}, Config::get( 'view.paths' ) ), [ $sourcePath ] ), 'signatures' );
 	}
 

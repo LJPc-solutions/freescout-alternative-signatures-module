@@ -19,7 +19,7 @@ This module adds the option to add alternative signatures in FreeScout.
 3. Unpack the zip file.
 4. Remove the zip file.
 5. Activate the module via the Modules page in FreeScout.
-6. Add at least one calendar via the Settings page in FreeScout.
+6. Add at least one signature via the mailbox settings in FreeScout.
 
 ## Update instructions
 
@@ -37,7 +37,7 @@ Feel free to add your own features by sending a pull request.
 ## Custom software
 
 Interested in a custom FreeScout module or anything else? Please let us know
-via [info@ljpc.nl](mailto:info@ljpc.nl?subject=Calendar%20module) or [www.ljpc.solutions](https://ljpc.solutions).
+via [info@ljpc.nl](mailto:info@ljpc.nl?subject=Signatures%20module) or [www.ljpc.solutions](https://ljpc.solutions).
 
 ## Donations
 
