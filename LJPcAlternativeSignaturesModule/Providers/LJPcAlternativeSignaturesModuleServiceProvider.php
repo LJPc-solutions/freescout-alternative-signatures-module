@@ -125,7 +125,7 @@ class LJPcAlternativeSignaturesModuleServiceProvider extends ServiceProvider {
 			] );
 		}, 10, 2 );
 
-		Eventy::addAction( 'mailboxes.update_after_signature', function ( $mailbox ) {
+		Eventy::addAction( 'mailbox.update.after_signature', function ( $mailbox ) {
 			//Blade render update.blade.php
 			$customSignatures = MailboxCustomSignature::where( 'mailbox_id', $mailbox->id )->get();
 			echo view( 'signatures::update', [
