@@ -68,7 +68,7 @@ class LJPcAlternativeSignaturesModuleServiceProvider extends ServiceProvider {
 			}
 		}, 10, 2 );
 
-		Eventy::addAction( 'mailboxes.settings_before_save', function ( $id, $request ) {
+		Eventy::addAction( 'mailbox.settings_before_save', function ( $id, $request ) {
 			$alternativeSignatureCount = $request->alternative_signature_count;
 			if ( ! empty( $alternativeSignatureCount ) && (int) $alternativeSignatureCount > 0 ) {
 				for ( $i = 0; $i < (int) $alternativeSignatureCount; $i ++ ) {

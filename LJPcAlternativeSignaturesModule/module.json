@@ -2,11 +2,11 @@
   "name": "LJPc alternative signatures module",
   "alias": "ljpcalternativesignaturesmodule",
   "description": "This module adds the option to add alternative signatures to Freescout mailboxes",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "detailsUrl": "",
   "author": "LJPc solutions",
   "authorUrl": "https://ljpc.solutions",
-  "requiredAppVersion": "1.8.20",
+  "requiredAppVersion": "1.8.23",
   "license": "AGPL-3.0",
   "keywords": [
     "ljpc",
