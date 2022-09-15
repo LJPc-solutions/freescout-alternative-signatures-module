@@ -68,7 +68,7 @@ class LJPcAlternativeSignaturesModuleServiceProvider extends ServiceProvider {
 			}
 		}, 10, 2 );
 
-		Eventy::addAction( 'mailbox.settings_before_save', function ( $id, $request ) {
+		Eventy::addAction( 'mailbox.settings_before_save', function ( $mailbox, $request ) {
 			$alternativeSignatureCount = $request->alternative_signature_count;
 			if ( ! empty( $alternativeSignatureCount ) && (int) $alternativeSignatureCount > 0 ) {
 				for ( $i = 0; $i < (int) $alternativeSignatureCount; $i ++ ) {
@@ -81,7 +81,7 @@ class LJPcAlternativeSignaturesModuleServiceProvider extends ServiceProvider {
 					$alternativeSignatureContent = "alternative_signature_content_$i";
 					$alternativeSignatureContent = $request->$alternativeSignatureContent;
 
-					if ( $alternativeSignatureAction === 'DELETE' || ( empty( $alternativeSignatureTitle ) && empty( $alternativeSignatureContent ) ) ) {
+					if ( $alternativeSignatureAction === 'DELETE' ) {
 						if ( ! empty( $alternativeSignatureId ) && (int) $alternativeSignatureId > 0 ) {
 							//Delete
 							/** @var MailboxCustomSignature|null $customSignature */
@@ -99,15 +99,15 @@ class LJPcAlternativeSignaturesModuleServiceProvider extends ServiceProvider {
 							$customSignature = MailboxCustomSignature::find( $alternativeSignatureId );
 							if ( $customSignature !== null ) {
 								$customSignature->name    = $alternativeSignatureTitle;
-								$customSignature->content = $alternativeSignatureContent;
+								$customSignature->content = $alternativeSignatureContent ?? '';
 								$customSignature->save();
 							}
 						} else {
 							//Create
 							$customSignature             = new MailboxCustomSignature();
-							$customSignature->mailbox_id = $id;
+							$customSignature->mailbox_id = $mailbox->id;
 							$customSignature->name       = $alternativeSignatureTitle;
-							$customSignature->content    = $alternativeSignatureContent;
+							$customSignature->content    = $alternativeSignatureContent ?? '';
 							$customSignature->save();
 						}
 					}
